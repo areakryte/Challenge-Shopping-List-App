@@ -7,12 +7,12 @@ $("form button").click(function(event){
 
 
 function appendToList(input){
-  var listItem = "<li><span class=\"shopping-item\">" + input + "</span><div class=\"shopping-item-controls\"><button class=\"shopping-item-toggle\"><span class=\"button-label\">check</span></button><button class=\"shopping-item-delete\"><span class=\"button-label\">delete</span></button></div></li>"
+  var listItem = "<li><span class=\"shopping-item\">" + input + "</span><div class=\"shopping-item-controls\"><button class=\"shopping-item-toggle\"><span class=\"button-label\">check</span></button> <button class=\"shopping-item-delete\"><span class=\"button-label\">delete</span></button></div></li>"
   $("ul").append(listItem);
 }
 
 
-$("ul li div .shopping-item-toggle").click(function(event){
+$("ul li div").on("click", ".shopping-item-toggle", function(event){
   event.preventDefault();
   //parentText.css("text-decoration", "line-through");
   //console.log(parentText);
@@ -26,9 +26,8 @@ $("ul li div .shopping-item-toggle").click(function(event){
   }
 });
 
-$("ul li div .shopping-item-delete").click(function(event){
+$("ul li div").on("click", ".shopping-item-delete",function(event){
   event.preventDefault();
-  //this.parent().hide();
   var li = $(this).closest("li");
   li.hide();
 });

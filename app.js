@@ -12,7 +12,7 @@ function appendToList(input){
 }
 
 
-$("ul li div").on("click", ".shopping-item-toggle", function(event){
+$(document.body).on("click", ".shopping-item-toggle", function(event){
   event.preventDefault();
   //parentText.css("text-decoration", "line-through");
   //console.log(parentText);
@@ -26,7 +26,7 @@ $("ul li div").on("click", ".shopping-item-toggle", function(event){
   }
 });
 
-$("ul li div").on("click", ".shopping-item-delete",function(event){
+$(document.body).on("click", ".shopping-item-delete",function(event){
   event.preventDefault();
   var li = $(this).closest("li");
   li.remove();
